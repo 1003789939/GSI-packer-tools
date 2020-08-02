@@ -1,0 +1,6 @@
+# Remove system partitions 
+remove system
+# Add partition system to group qti_dynamic_partitions
+add system qti_dynamic_partitions
+# Grow partition system from 0 to [size]
+resize system 123321

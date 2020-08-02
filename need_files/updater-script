@@ -1,0 +1,28 @@
+
+show_progress(0.200000, 10);
+# ---- update tasks: exaid part 2----
+
+
+    
+show_progress(0.700000, 250);
+
+# --- Start patching dynamic partitions ---
+
+
+# Update dynamic partition metadata
+
+assert(update_dynamic_partitions(package_extract_file("dynamic_partitions_op_list")));
+
+# Patch partition system
+
+ui_print("Patching system image unconditionally...");
+block_image_update(map_partition("system"), package_extract_file("system.transfer.list"), "system.new.dat.br", "system.patch.dat") ||
+  abort("E1001: Failed to update system image.");
+
+# --- End patching dynamic partitions ---
+
+show_progress(0.100000, 2);
+
+# ---- radio update tasks 2 ----
+
+set_progress(1.000000);
