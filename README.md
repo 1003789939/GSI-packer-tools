@@ -5,14 +5,16 @@
     目前仅在小米10上测试通过，其他机型自测
 
 # 先决条件:
-    1.gsi镜像
-    2.带有system分区镜像的rom包(后续支持无system分区镜像rom)
+    1.gsi镜像(目前仅支持sparse image)
+    2.带有system分区镜像的rom包(可选)
     3.Windows下python3环境
 
 # 用法:
-    1.新建input文件夹
-    2.将gsi镜像重命名为gsi.img并和底包一起放入input文件夹
-    3.执行build.bat,按提示操作即可
+    1.执行build.bat
+    2.将gsi镜像重命名为gsi.img放入input文件夹
+    3.将底包放入input文件夹(可选)
+    3.按提示操作即可
+    
     
     注：测试时底包用的官方全量包
     
