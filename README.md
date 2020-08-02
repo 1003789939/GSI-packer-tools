@@ -10,8 +10,9 @@
     3.Windows下python3环境
 
 # 用法:
-    1.将gsi镜像重命名为gsi.img并和底包一起放入input文件夹
-    2.执行build.bat,按提示操作即可
+    1.新建input文件夹
+    2.将gsi镜像重命名为gsi.img并和底包一起放入input文件夹
+    3.执行build.bat,按提示操作即可
     
     注：测试时底包用的官方全量包
     
