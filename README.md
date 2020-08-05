@@ -9,7 +9,6 @@
     2.带有system分区镜像的rom包(可选)
     3.Windows下python3环境
     
-    注:windows10家庭版不受支持！！！
 
 # 用法:
     1.执行build.bat
