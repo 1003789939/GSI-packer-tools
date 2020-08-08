@@ -5,7 +5,7 @@
     目前仅在小米10、Android10上测试通过，其他机型自测
 
 # 先决条件:
-    1.gsi镜像(目前仅支持sparse image)
+    1.gsi镜像(支持raw、sparse image)
     2.带有system分区镜像的rom包(可选)
     3.Windows下python3环境(full版内置)
     
