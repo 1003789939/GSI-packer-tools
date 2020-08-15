@@ -9,38 +9,38 @@ rem         DATE: 2020/8/8 9:46
 rem==============================================
 @echo off
 setlocal enabledelayedexpansion
-title GSI´ò°ü¹¤¾ß By ChasonJiang
+title GSIæ‰“åŒ…å·¥å…· By ChasonJiang
 if not exist "input" md input >nul 2>nul
 del /s readme.txt >nul 2>nul
 echo.*******************************************>>readme.txt
 echo.>>readme.txt
-echo.            »¶Ó­Ê¹ÓÃGSI´ò°ü¹¤¾ß>>readme.txt
+echo.            æ¬¢è¿ä½¿ç”¨GSIæ‰“åŒ…å·¥å…·>>readme.txt
 echo.>>readme.txt
 echo.              By ChasonJiang>>readme.txt
 echo.>>readme.txt
-echo.  ×¢ÒâÊÂÏî:>>readme.txt
+echo.  æ³¨æ„äº‹é¡¹:>>readme.txt
 echo.>>readme.txt
-echo.    1.ÇëÈ·ÈÏÊÇ·ñÔÚpython3»·¾³Ê¹ÓÃ>>readme.txt
+echo.    1.è¯·ç¡®è®¤æ˜¯å¦åœ¨python3ç¯å¢ƒä½¿ç”¨>>readme.txt
 echo.>>readme.txt
-echo.    2.ÇëÈ·ÈÏgsi¾µÏñÒÑ¸üÃûÎªgsi.img>>readme.txt
+echo.    2.è¯·ç¡®è®¤gsié•œåƒå·²æ›´åä¸ºgsi.img>>readme.txt
 echo.>>readme.txt
-echo.    3.ÇëÈ·ÈÏµ×°ü/gsi¾µÏñÒÑ·Å½øinputÎÄ¼ş¼Ğ>>readme.txt
+echo.    3.è¯·ç¡®è®¤åº•åŒ…/gsié•œåƒå·²æ”¾è¿›inputæ–‡ä»¶å¤¹>>readme.txt
 echo.>>readme.txt
 echo.*******************************************>>readme.txt
 echo.***************************************
 echo.
-echo.            »¶Ó­Ê¹ÓÃGSI´ò°ü¹¤¾ß
+echo.            æ¬¢è¿ä½¿ç”¨GSIæ‰“åŒ…å·¥å…·
 echo.
 echo.              By ChasonJiang
 echo.
-echo.  ÇëÑ¡Ôñ´ò°ü·½Ê½:
+echo.  è¯·é€‰æ‹©æ‰“åŒ…æ–¹å¼:
 echo.
-echo.       1.GSIÖ±½Ó´ò°ü
+echo.       1.GSIç›´æ¥æ‰“åŒ…
 echo.
-echo.       2.GSI¼Óµ×°ü´ò°ü
+echo.       2.GSIåŠ åº•åŒ…æ‰“åŒ…
 echo.
 echo.***************************************
-set /p num=ÇëÑ¡Ôñ:
+set /p num=è¯·é€‰æ‹©:
 if !num!==1 (
 goto not_decompression
 )
@@ -88,10 +88,10 @@ for /f "tokens=2" %%i in (info.txt) do set inf=%%i
 del info.txt >nul 2>nul
 rd /s /q input\rom >nul 2>nul
 
-echo ÕıÔÚ½âÑ¹rom°ü...
+echo æ­£åœ¨è§£å‹romåŒ…...
 bin\7z.exe x "input\*.zip" -o"input\rom" >nul 2>nul
 if not exist "input\rom\*.br" (
-echo ½âÑ¹Ê§°Ü£¡
+echo è§£å‹å¤±è´¥ï¼
 rd /s /q input\rom >nul 2>nul
 ping 127.1 -n 5 >nul
 exit
@@ -103,7 +103,7 @@ if !inf!==2 goto no_trans
 goto err5
 :trans
 cls
-echo ÕıÔÚ×ª»»gsi...
+echo æ­£åœ¨è½¬æ¢gsi...
 bin\simg2img.exe input\gsi.img input\system.img >nul 2>nul
 dir /a /s system.img >size.txt
 bin\sed.exe -n '/system.img/p' size.txt >size1.txt
@@ -118,7 +118,7 @@ del /s input\rom\system.new.dat >nul 2>nul
 del /s input\system.img >nul 2>nul
 goto patch
 :no_trans
-echo ÕıÔÚ×ª»»gsi...
+echo æ­£åœ¨è½¬æ¢gsi...
 dir /a /s gsi.img >size.txt
 bin\sed.exe -n '/gsi.img/p' size.txt >size1.txt
 for /f "tokens=3" %%i in (size1.txt) do echo %%i>size.txt
@@ -132,7 +132,7 @@ del /s input\rom\system.new.dat >nul 2>nul
 goto patch
 :patch
 cls
-echo ÕıÔÚĞŞ¸Ä¶¯Ì¬·ÖÇøÎÄ¼ş...
+echo æ­£åœ¨ä¿®æ”¹åŠ¨æ€åˆ†åŒºæ–‡ä»¶...
 bin\sed.exe -n '/resize\ssystem/p' input\rom\dynamic_partitions_op_list >temp.txt
 set /p tmp=<temp.txt
 set /p s=<size.txt
@@ -146,15 +146,35 @@ cls
 rd /s /q output\ >nul 2>nul
 if exist "output\gsi_rom.zip" (
 echo.
-echo.ÎŞ·¨É¾³ı¾ÉµÄgsi_rom.zip!
+echo.æ— æ³•åˆ é™¤æ—§çš„gsi_rom.zip!
 echo.
-echo.ÇëÊÖ¶¯É¾³ı,°´ÈÎÒâ¼ü¼ÌĞø´ò°ü
+echo.è¯·æ‰‹åŠ¨åˆ é™¤,æŒ‰ä»»æ„é”®ç»§ç»­æ‰“åŒ…
 pause >nul 2>nul
 )
 md output\ >nul 2>nul
-echo ÕıÔÚÉú³Érom°ü...
+echo æ­£åœ¨ç”ŸæˆromåŒ…...
 echo.
-echo. Ê±¼ä¿ÉÄÜ½Ï³¤£¬ÇëÄÍĞÄµÈ´ı...
+echo. æ—¶é—´å¯èƒ½è¾ƒé•¿ï¼Œè¯·è€å¿ƒç­‰å¾…...
+if not exist "input\rom\META-INF\com\google\android\updater-script" (
+    echo æ— æ³•æ‰“åŒ…ï¼updater-scriptç¼ºå¤±ï¼
+    pause
+    exit
+)
+if not exist "input\rom\META-INF\com\google\android\update-binary" (
+    echo æ— æ³•æ‰“åŒ…ï¼update-binaryç¼ºå¤±ï¼
+    pause
+    exit
+)
+if not exist "input\rom\dynamic_partitions_op_list" (
+    echo æ— æ³•æ‰“åŒ…ï¼dynamic_partitions_op_listç¼ºå¤±ï¼
+    pause
+    exit
+)
+if not exist "input\rom\system.new.dat.br" (
+    echo æ— æ³•æ‰“åŒ…ï¼system.new.dat.brç¼ºå¤±ï¼
+    pause
+    exit
+)
 if %num%==1 (
 bin\winrar.exe a -ep1 -o+ -inul -ibck "output\gsi_rom.zip" input\rom\META-INF input\rom\*
 )
@@ -167,21 +187,21 @@ bin\winrar.exe a -ep1 -o+ -inul -ibck "output\gsi_rom.zip" input\rom\META-INF in
 )
 )
 echo.
-echo Íê³É£¡¿ìÈ¥output²é¿´°É£¡
+echo å®Œæˆï¼å¿«å»outputæŸ¥çœ‹å§ï¼
 echo.
 pause
 exit
 :err1
 cls
 echo.
-echo. Î´¼ì²âµ½gsi.img,Çë¼ì²é£¡
+echo. æœªæ£€æµ‹åˆ°gsi.img,è¯·æ£€æŸ¥ï¼
 echo.
 pause
 exit
 :err2
 cls
 echo.
-echo. Î´¼ì²âµ½µ×°ü,Çë¼ì²é£¡
+echo. æœªæ£€æµ‹åˆ°åº•åŒ…,è¯·æ£€æŸ¥ï¼
 echo.
 pause
 exit
@@ -189,7 +209,7 @@ exit
 :err3
 cls
 echo.
-echo. »·¾³È±Ê§,Çë»·¾³ÅäÖÃ£¡
+echo. ç¯å¢ƒç¼ºå¤±,è¯·ç¯å¢ƒé…ç½®ï¼
 echo.
 pause
 exit
@@ -197,7 +217,7 @@ exit
 :err4
 cls
 echo.
-echo.×ª»»Ê§°Ü£¡
+echo.è½¬æ¢å¤±è´¥ï¼
 echo.
 pause
 exit
@@ -205,7 +225,7 @@ exit
 :err5
 cls
 echo.
-echo.img¾µÏñÒÑËğ»µ»ò»·¾³È±Ê§£¡
+echo.imgé•œåƒå·²æŸåæˆ–ç¯å¢ƒç¼ºå¤±ï¼
 echo.
 pause
 exit
@@ -213,7 +233,7 @@ exit
 :err6
 cls
 echo.
-echo.¹¤¾ßÒÑËğ»µ£¡ÇëÖØĞÂÏÂÔØ»ò½âÑ¹£¡
+echo.å·¥å…·å·²æŸåï¼è¯·é‡æ–°ä¸‹è½½æˆ–è§£å‹ï¼
 echo.
 pause
 exit
